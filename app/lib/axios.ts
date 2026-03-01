@@ -12,7 +12,7 @@ const api = axios.create({
 api.interceptors.request.use(
     (config) => {
         // جلب التوكن من اللوكال ستورج
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('user-token');
 
         if (token) {
             // إضافة التوكن في الـ Headers
@@ -34,7 +34,7 @@ api.interceptors.response.use(
             console.warn('Token expired or invalid. Logging out...');
 
             // تنظيف اللوكال ستورج وتوجيه المستخدم لصفحة اللوجين
-            localStorage.removeItem('token');
+            localStorage.removeItem('user-token');
             window.location.href = '/login';
         }
         return Promise.reject(error);

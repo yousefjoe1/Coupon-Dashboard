@@ -6,6 +6,9 @@ export default [
     route("home", "routes/home.tsx"),
 
     layout("routes/dashboard/layout.tsx", [
-        route("dashboard", "routes/dashboard/home.tsx"), // الوصول لها عبر /dashboard
+        route("dashboard", "routes/dashboard/home.tsx"),
+        route("dashboard/stores", "routes/dashboard/stores.tsx"),
+        route("dashboard/coupons", "routes/dashboard/coupones.tsx"),
+        route("dashboard/products", "routes/dashboard/products.tsx"),
     ]),
 ] satisfies RouteConfig;
